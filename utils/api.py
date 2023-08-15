@@ -12,6 +12,10 @@ class GoogleMapsAPI:
     # Метод для создания новой локации
     @staticmethod
     def create_new_place():
+        resourse_post = "/maps/api/place/add/json"  # Ресурс метода POST
+        url_post = GoogleMapsAPI.BASE_URL + resourse_post + GoogleMapsAPI.PARAMETR_KEY
+        print(f" - POST URL: {url_post}")
+
         create_new_place_json = {
             "location": {
                 "lat": -38.383494,
@@ -27,11 +31,6 @@ class GoogleMapsAPI:
             "website": "https://google.com",
             "language": "French-IN"
         }
-
-        resourse_post = "/maps/api/place/add/json"  # Ресурс метода POST
-        url_post = GoogleMapsAPI.BASE_URL + resourse_post + GoogleMapsAPI.PARAMETR_KEY
-        print(f" - POST URL: {url_post}")
-
         result_post = HttpMethods.post(url=url_post, body=create_new_place_json)
         print(f" - POST response: {result_post.text}")
 
@@ -44,7 +43,24 @@ class GoogleMapsAPI:
         url_get = GoogleMapsAPI.BASE_URL + resourse_get + GoogleMapsAPI.PARAMETR_KEY + "&place_id=" + place_id
         print(f" - GET URL: {url_get}")
 
-        result_get = HttpMethods.get(url_get)
+        result_get = HttpMethods.get(url=url_get)
         print(f" - GET response: {result_get.text}")
 
         return result_get
+
+    # Метод для изменения новой локации
+    @staticmethod
+    def put_new_place(place_id):
+        resourse_put = "/maps/api/place/update/json"  # Ресурс метода PUT
+        url_put = GoogleMapsAPI.BASE_URL + resourse_put + GoogleMapsAPI.PARAMETR_KEY
+        print(f" - PUT URL: {url_put}")
+
+        update_new_location_json = {
+            "place_id": place_id,
+            "address": "100 Lenina street, RU",
+            "key": "qaclick123"
+        }
+        result_put = HttpMethods.put(url=url_put, body=update_new_location_json)
+        print(f" - PUT response: {result_put.text}")
+
+        return result_put
