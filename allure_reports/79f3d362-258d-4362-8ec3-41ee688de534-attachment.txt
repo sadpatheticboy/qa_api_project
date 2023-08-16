@@ -1,13 +1,13 @@
 
 POST request:
  - POST URL: https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
- - POST response: {"status":"OK","place_id":"ef0b5f31e9aa45f77d4e2e6f58cf56e9","scope":"APP","reference":"40ed9444a71557792f7a7f8bbaffe03f40ed9444a71557792f7a7f8bbaffe03f","id":"40ed9444a71557792f7a7f8bbaffe03f"}
+ - POST response: {"status":"OK","place_id":"e6a2fadb69c55258649817ff53bf323a","scope":"APP","reference":"92267413fd71ecd3509652090a23e82d92267413fd71ecd3509652090a23e82d","id":"92267413fd71ecd3509652090a23e82d"}
  - Checking status code. Success: correct status code 200
  - Checking JSON token. Success. All expected fields are present
  - Checking JSON value. Success. Correct value
 
 GET request (after create):
- - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=ef0b5f31e9aa45f77d4e2e6f58cf56e9
+ - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e6a2fadb69c55258649817ff53bf323a
  - GET response: {"location":{"latitude":"-38.383494","longitude":"33.427362"},"accuracy":"50","name":"Frontline house","phone_number":"(+91) 983 893 3937","address":"29, side layout, cohen 09","types":"shoe park,shop","website":"https:\/\/google.com","language":"French-IN"}
  - Checking status code. Success: correct status code 200
  - Checking JSON token. Success. All expected fields are present
@@ -21,7 +21,7 @@ PUT request:
  - Checking JSON value. Success. Correct value
 
 GET request (after update):
- - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=ef0b5f31e9aa45f77d4e2e6f58cf56e9
+ - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e6a2fadb69c55258649817ff53bf323a
  - GET response: {"location":{"latitude":"-38.383494","longitude":"33.427362"},"accuracy":"50","name":"Frontline house","phone_number":"(+91) 983 893 3937","address":"100 Lenina street, RU","types":"shoe park,shop","website":"https:\/\/google.com","language":"French-IN"}
  - Checking status code. Success: correct status code 200
  - Checking JSON token. Success. All expected fields are present
@@ -35,7 +35,7 @@ DELETE request:
  - Checking JSON value. Success. Correct value
 
 GET request (after delete):
- - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=ef0b5f31e9aa45f77d4e2e6f58cf56e9
+ - GET URL: https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e6a2fadb69c55258649817ff53bf323a
  - GET response: {"msg":"Get operation failed, looks like place_id  doesn't exists"}
  - Checking status code. Success: correct status code 404
  - Checking JSON token. Success. All expected fields are present
